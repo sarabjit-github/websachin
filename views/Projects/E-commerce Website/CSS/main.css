@@ -1,0 +1,938 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    scroll-behavior: smooth;
+    font-family: system-ui;
+   
+    /* font-family: 'Roboto', sans-serif; */
+    /*font-family: 'Akaya Kanadaka', cursive;*/
+}
+:root{
+    --primary:rgb(255, 136, 0);
+    --secondary:black;
+    --light:#2f3640;
+
+    
+}
+header{
+    width: 100%;
+    /* height: 100vh; */
+}
+
+.nav1{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 2px 0px 3px gray;
+    text-align: center;
+}
+.nav1 .left{
+    flex-basis: 50%;
+    letter-spacing: 1px;
+}
+.nav1 .left a{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 0px 5px;
+}
+.right{
+  flex-basis: 50%;  
+
+}
+.right i{
+    font-size: 20px;
+    margin: 0px 15px;
+    background-color: var(--primary);
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.right i:hover{
+    transform: rotate(360deg);
+}
+
+/* nav2 start */
+.nav2{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.nav2 .nav2-left,.nav2-center,.nav2-right{
+    flex-basis: 30%;
+}
+/* .nav2-left a{
+    color: black;
+    text-decoration: none;
+    
+}
+.nav2-left a i{
+    
+    margin-left: 15px;
+} */
+.nav2-center a{
+    margin: auto;
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+}
+.nav2-center a h1{
+    color: var(--primary);
+}
+.nav2-center a span{
+    color: var(--secondary);
+}
+.nav2-center p{
+    font-size: 15px;
+    color: gray;
+    margin-top: 5px;
+}
+/* .nav2-right a{
+    text-decoration: none;
+    color: black;
+} */
+
+
+.nav2-left{
+    display: none;
+}
+.nav2-right{
+    display: none;
+}
+.nav2-center{
+    display: block;
+    margin: auto;
+}
+
+/* NAV3 */
+
+.nav3{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+.nav3 ul{
+    list-style: none;
+    text-align: center;
+}
+.nav3 ul li{
+    /* padding: 0px 40px 0px 0px; */
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    z-index: 99;
+}
+.nav3 ul li a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    font-weight: 500;
+}
+.nav3 ul li a:hover{
+    color: var(--primary);
+}
+.nav3 ul li a i{
+    color: var(--primary);
+    margin: 0px 4px;
+}
+.nav3 ul ul{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none;
+}
+.nav3 ul ul li{
+    background-color: white;
+    border-bottom: 1px solid var(--primary);
+}
+.nav3 ul li:hover>ul{
+    display: block;
+}
+.featured{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to right,rgba(0,0,0,1) 20%,rgba(255,255,255,0.2)), url('../IMG/modelman.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+.featured-text{
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+.featured-text button{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary);
+    margin: 20px 0px;
+    color: white;
+}
+.latest{
+    /* padding: 0px 100px; */
+
+}
+.product-intro{
+    text-align: center;
+    padding: 20px 0px;
+}
+.product-intro h1{
+    color: var(--primary);
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    
+}
+.product-intro h1 span{
+    color: var(--secondary);
+}
+.product-intro p{
+    color: gray;
+    margin: 15px 0px;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    margin: 4rem 0;
+}
+.card-container .card{
+    flex-basis: 20%;
+    padding: 0.8rem;
+    position: relative;
+}
+.card img{
+    width: 100%;
+    
+    transition: 0.5s ease-in-out;
+}
+.card i{
+    color: goldenrod;
+    margin: 5px 0;
+
+}
+.card button{
+    color: white;
+    background-color: var(--secondary);
+    border: none;
+    outline: none;
+    margin-top: 12px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+.card:hover img, .card:hover h1{
+    width: 80%;
+    color: var(--primary);
+}
+.card::before{
+    content: '20% off';
+    width: 25%;
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    background-color: var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1px 4px;
+    transform: rotate(-20deg);
+}
+.trends{
+    /* padding: 50px 100px; */
+    background-color: rgba(0,0,0,0.01);
+}
+
+.trends .swiper {
+    width: 100%;
+    padding: 50px;
+  }
+
+.trends .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+  }
+
+.trends .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  footer{
+      background-color: rgb(117, 41, 117);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 2rem;
+  }
+  footer div{
+      flex-basis: 30%;
+  }
+  footer h1{
+      color: var(--primary);
+      letter-spacing: 0.1rem;
+      font-size: 3rem;
+  }
+  footer h1 span{
+      color: black;
+  }
+  footer .text-sachin{
+      padding-top: 4px;
+  }
+  footer .text-sachin span{
+    color: var(--primary);
+}
+  footer p{
+      font-size: 0.9rem;
+  }
+  footer .text-sachin{
+    font-size: 1.2rem;
+}
+  footer i{
+      margin: 0px 5px;
+  }
+
+  footer i:hover{
+      color: var(--primary);
+  }
+
+
+
+  /* Media Queries */
+
+
+  @media only screen and (max-width:1200px){
+    .card-container .card{
+        flex-basis: 50%;
+        padding: 0.7rem;
+        position: relative;
+    }
+    .card::before{
+        content: '20% off';
+        font-size: 12px;
+        width: 25%;
+        height: 25px;
+        line-height: 25px;
+        color: white;
+        background-color: var(--primary);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1px 4px;
+        transform: rotate(-20deg);
+    }
+  }
+
+  @media only screen and (max-width:924px){
+    
+    .nav3 ul li{
+        /* padding: 0px 40px 0px 0px; */
+        display: inline-block;
+        width: 100px;
+        position: relative;
+        z-index: 99;
+    }
+    .nav3 ul ul{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: none;
+    }
+    .nav3 ul ul li a{
+        font-size: 13px;
+    }
+    .nav3 ul ul li{
+        width: 110px;
+    }
+    .card-container .card{
+        flex-basis: 50%;
+        padding: 0.7rem;
+        position: relative;
+    }
+    .card h1{
+        font-size: 21px;
+    }
+    .card i{
+        font-size: 13px;
+    }
+    footer{
+        background-color: rgb(117, 41, 117);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 2rem;
+    }
+    footer div{
+        flex-basis: 30%;
+    }
+    footer h1{
+        color: var(--primary);
+        letter-spacing: 0.01rem;
+    }
+    footer h1{
+        font-size: 2rem;
+    }
+    footer h1 span{
+        color: black;
+    }
+    footer .text-sachin{
+        font-size: 1rem;
+    }
+    footer .text-sachin span{
+        color: var(--primary);
+    }
+    footer p{
+        font-size: 0.8rem;
+    }
+    footer i{
+        margin: 0px 2px;
+    }
+}
+
+
+
+
+
+  @media only screen and (max-width:739px){
+  
+    .right i{
+        font-size: 20px;
+        margin: 0px 10px;
+        background-color: var(--primary);
+        color: white;
+        padding: 8px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+    
+    .nav1 .left{
+        flex-basis: 50%;
+        letter-spacing: 0px;
+    }
+    .nav1 .left a{
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: bold;
+        margin: 0px 5px;
+    }
+    .nav2-left{
+        display: none;
+    }
+    .nav2-right{
+        display: none;
+    }
+    .nav2-center{
+        display: block;
+        margin: auto;
+    }
+    .nav3 ul ul{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: none;
+    }
+    .nav3 ul ul li a{
+        font-size: 13px;
+    }
+    .nav3 ul ul li{
+        width: 110px;
+    }
+    .featured{
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(to right,rgba(0,0,0,1) 20%,rgba(255,255,255,0.2)), url('../IMG/g1.jpg');
+        background-size: cover;
+        background-position: top;
+        position: relative;
+    }
+    .product-intro{
+        text-align: center;
+        padding: 15px 0px;
+    }
+    .card-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        cursor: pointer;
+        margin: 1rem 0;
+    }
+    .card button{
+        color: white;
+        background-color: var(--secondary);
+        border: none;
+        outline: none;
+        margin-top: 12px;
+        padding: 4px 10px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    .card i{
+        font-size: 13px;
+    }
+    .card h1{
+        font-size: 20px;
+    }
+    .card::before{
+        font-size: 10px;
+    }
+    footer{
+        background-color: rgb(117, 41, 117);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 2rem;
+    }
+    footer div{
+        flex-basis: 30%;
+    }
+    footer h1{
+        font-size: 2rem;
+    }
+    footer h1 span{
+        color: black;
+    }
+    footer .text-sachin{
+        font-size: 1rem;
+    }
+    footer .text-sachin span{
+        color: var(--primary);
+    }
+    footer p{
+        font-size: 0.8rem;
+    }
+    footer i{
+        margin: 0px 2px;
+    }
+    .trends .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .trends .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+}
+
+
+
+
+@media only screen and (max-width:625px){
+
+    .right i{
+        font-size: 13px;
+        margin: 0px 5px;
+        background-color: var(--primary);
+        color: white;
+        padding: 8px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+    .nav1{
+        height: 60px;
+    }
+    .nav2{
+        height: 90px;
+    }
+    .nav2-center h1{
+        font-size: 40px;
+    }
+    .nav2-center h1 p{
+        font-size: 8px;
+    }
+    .nav3 ul li{
+        /* padding: 0px 40px 0px 0px; */
+        display: inline-block;
+        width: 80px;
+        position: relative;
+        z-index: 99;
+    }
+    .nav3 ul li a{
+        text-decoration: none;
+        color: black;
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .nav3 ul ul{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        display: none;
+    }
+    .nav3 ul ul li a{
+        font-size: 12px;
+    }
+    .nav3 ul ul li{
+        width: 95px;
+    }
+    .featured{
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(to right,rgba(0,0,0,1) 20%,rgba(255,255,255,0.2)), url('../IMG/g1.jpg');
+        background-size: cover;
+        background-position: top;
+        position: relative;
+    }
+    .featured-text{
+        max-width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        font-family: 'Akaya Kanadaka', cursive;
+    }
+    .featured-text button{
+        padding: 5px 10px;
+        border: none;
+        outline: none;
+        background-color: var(--secondary);
+        margin: 20px 0px;
+        color: white;
+        font-size: 0.6rem;
+    }
+    .product-intro h1{
+        font-size: 30px;
+    }
+    .product-intro p{
+        font-size: 12px;
+    }
+    .trends .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .card-container .card{
+          flex-basis: 50%;
+      }
+      .card h1{
+          font-size: 17px;
+      }
+      .card i{
+        color: goldenrod;
+        margin: 2px 0;
+        font-size: 10px;
+    }
+    .card::before{
+        font-size: 8px;
+        padding: 1px 0px;
+        width: 21%;
+        height: 21px;
+    }
+    footer{
+        background-color: rgb(117, 41, 117);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 2rem;
+    }
+    footer div{
+        flex-basis: 30%;
+    }
+    footer h1{
+        color: var(--primary);
+        letter-spacing: 0.01rem;
+        font-size: 1.5rem;
+    }
+    footer h1 span{
+        color: black;
+    }
+    footer p{
+        font-size: 0.8rem;
+    }
+    footer .text-sachin{
+        font-size: 0.8rem;
+    }
+    footer i{
+        margin: 0px 2px;
+        font-size: 1.2rem;
+    }
+    .trends .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+}
+
+
+
+
+
+
+@media only screen and (max-width:503px){
+    .nav1 .left{
+        flex-basis: 50%;
+        letter-spacing: 0.1px;
+        font-size: 13px;
+    }
+    .nav1 .left span{
+        font-size: 13px;
+    }
+    .nav1 .left a{
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: bold;
+        margin: 0px 5px;
+        font-size: 13px;
+    }
+    .right i{
+        font-size: 11px;
+        margin: 0px 3px;
+        background-color: var(--primary);
+        color: white;
+        padding: 8px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+    .nav1{
+        height: 50px;
+    }
+    .nav2{
+        height: 70px;
+    }
+    .nav2-center h1{
+        font-size: 30px;
+    }
+    .nav2-center h1 p{
+        font-size: 7px;
+    }
+    .nav3 ul li{
+        /* padding: 0px 40px 0px 0px; */
+        display: inline-block;
+        width: 60px;
+        position: relative;
+        z-index: 99;
+    }
+    .nav3 ul li a{
+        text-decoration: none;
+        color: black;
+        display: block;
+        font-weight: 500;
+        font-size: 11px;
+    }
+    .nav3 ul ul{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        display: none;
+    }
+    .nav3 ul ul li a{
+        font-size: 11px;
+    }
+    .nav3 ul ul li{
+        width: 90px;
+    }
+    .featured{
+        width: 100%;
+        height: 350px;
+        background: linear-gradient(to right,rgba(0,0,0,1) 20%,rgba(255,255,255,0.2)), url('../IMG/g1.jpg');
+        background-size: cover;
+        background-position: top;
+        position: relative;
+    }
+    .featured-text{
+        max-width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-family: 'Akaya Kanadaka', cursive;
+    }
+    .featured-text button{
+        padding: 4px 8px;
+        border: none;
+        outline: none;
+        background-color: var(--secondary);
+        margin: 10px 0px;
+        color: white;
+        font-size: 0.5rem;
+    }
+    .product-intro h1{
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+    .product-intro p{
+        font-size: 10px;
+    }
+    .card-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        cursor: pointer;
+        margin: 0.8rem 0;
+    }
+    .card-container .card{
+        flex-basis: 50%;
+        padding: 0.6rem;
+        position: relative;
+    }
+    .card button{
+        color: white;
+        background-color: var(--secondary);
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        padding: 3px 6px;
+        cursor: pointer;
+        font-size: 11px;
+    }
+    .card i{
+        color: goldenrod;
+        margin: 2px 0;
+        font-size: 8px;
+    }
+    .card h1{
+        font-size: 14px;
+    }
+    .card p{
+        font-size: 15px;
+    }
+    .card::before{
+        content: '20% off';
+        width: 20%;
+        height: 19px;
+        line-height: 25px;
+        color: white;
+        background-color: var(--primary);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1px 0px;
+        font-size: 6px;
+        transform: rotate(-20deg);
+    }
+    .trends .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    footer{
+        background-color: rgb(117, 41, 117);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 1rem;
+    }
+    footer div{
+        flex-basis: 30%;
+    }
+    footer h1{
+        color: var(--primary);
+        letter-spacing: 1px;
+        font-size: 1rem;
+    }
+    footer h1 span{
+        color: black;
+    }
+    footer p{
+        font-size: 9px;
+    }
+    footer .text-sachin{
+        font-size: 14px;
+    }
+    footer i{
+        margin: 0px 2px;
+        font-size: 1.1rem;
+    }
+    .trends .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 250px;
+        height: 250px;
+      }
+}
+
+
+
+
+@media only screen and (max-width:383px){
+    
+    .nav3 ul li{
+        
+        width: 55px;
+        
+    }
+    .nav3 ul li a{
+        
+        font-size: 9px;
+    }
+    .nav3 ul ul{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        display: none;
+        /* margin-top: 20px; */
+    }
+    .nav3 ul ul li{
+        padding: 0px 2px;
+    }
+    .nav3 ul ul li a{
+        font-size: 5px;
+    }
+    .nav3 ul ul li{
+        width: 50px;
+        /* height: 100%; */
+    }
+}
+
+/* For Mobile  */
+
+@media only screen and (max-width:360px){
+
+}
